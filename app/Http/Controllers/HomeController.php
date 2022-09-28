@@ -9,11 +9,11 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $products = Product::get();
+        //$products = Product::get();
 
         $productGroups = ProductGroup::get();
         //$productGroups = ProductGroup::noParent()->get();
 
-        return view('home.index', ['products' => $products, 'productGroups' => $productGroups]);
+        return view('home.index', ['productGroups' => $productGroups]);
     }
 }

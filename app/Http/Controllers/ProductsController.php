@@ -21,13 +21,15 @@ class ProductsController extends Controller
 
     public function index(Request $request)
     {
+        $productGroups = ProductGroup::get();
         $productGroupId = $request->get('productGroupId');
         if($productGroupId) {
             $productGroup = ProductGroup::findOrFail($productGroupId);
-            return view('products.index', ['products' => $productGroup->products]);
+            $headerText = $productGroup->title;
+            return view('products.index', ['products' => $productGroup->products, 'productGroups' => $productGroups, 'headerText' => $headerText]);
         }else {
             $products = Product::paginate(5);
-            return view('products.index', ['products' => $products]);
+            return view('products.index', ['products' => $products, 'productGroups' => $productGroups, 'headerText' => 'Tüm Ürünler']);
         }
     }
 

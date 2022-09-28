@@ -7476,6 +7476,7 @@ input[type=button].btn-block {
 .card-img-top {
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
+  object-fit: cover;
 }
 
 .card-img,
@@ -13038,4 +13039,63 @@ h3 {
 
 .badge {
     line-height: 1.1!important;
+}
+.laodBox:nth-child(2n-1){
+    background-color: rgba(0,0,0,0.3);
+}
+.laodBox{
+    display: inline-block;
+    height: 100vh;
+    width: 100%;
+    float:left;
+    position: absolute;
+    /*margin:0 -4px -5px -2px;*/
+    transition: all .2s ease;
+    z-index: 1;
+}
+.loader8{
+    position: relative;
+    width: 80px;
+    height: 80px;
+
+    top: 28%;
+    top: -webkit-calc(50% - 43px);
+    top: calc(50% - 43px);
+    left: 35%;
+    left: -webkit-calc(50% - 43px);
+    left: calc(50% - 43px);
+
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, .2);
+    border-width: 40px;
+    border-style: double;
+    border-color:transparent  #fff;
+
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+
+    -webkit-transform-origin:  50% 50%;
+    transform-origin:  50% 50% ;
+    -webkit-animation: loader8 2s linear infinite;
+    animation: loader8 2s linear infinite;
+
+}
+
+@-webkit-keyframes loader8{
+    0%{-webkit-transform:rotate(0deg);}
+    100%{-webkit-transform:rotate(360deg);}
+}
+
+@keyframes loader8{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+.btn-group.special {
+    display: flex;
+}
+
+.special .btn {
+    flex: 1
 }
